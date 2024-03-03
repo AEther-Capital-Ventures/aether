@@ -1,0 +1,78 @@
+:root {
+  --clr-primary: #03030B;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  margin-bottom: 40px;
+}
+
+.global-header {
+  display: block;
+  background-color: var(--clr-primary);
+  width: 100vw;
+  text-align: center;
+  padding: 10px;
+}
+
+.global-header img {
+  height: auto;
+  max-width: 250px;
+}
+
+.global-header a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+}
+
+.navigation {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #333;
+}
+
+.cta-button {
+  background-color: #333;
+  color: #FFF;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: var(--clr-primary);
+  padding: 10px;
+}
+
+.nav-links a {
+  display: block;
+  color: #FFF;
+  text-decoration: none;
+  padding: 8px;
+}
+
+section {
+  padding: 20px;
+}
+
+.main-content {
+  margin-bottom: 50px;
+}
+
+footer {
+  background-color: #333;
+  color: #FFF;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
