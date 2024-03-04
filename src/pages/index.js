@@ -48,7 +48,7 @@ const Index = ({ data, location }) => {
         <p>Contact Us: cdanielmejia33@gmail.com</p> 
       </section> 
     </Layout>
-  )
+  );
 }
 
 export default Index
