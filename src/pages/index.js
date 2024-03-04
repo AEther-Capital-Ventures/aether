@@ -25,7 +25,6 @@ const Index = ({ data, location }) => {
           <li>Wealth Growth: Learn strategies to grow your wealth effectively.</li>
           <li>Insider Knowledge: Stay ahead with exclusive market insights.</li>
           <li>Expert Guidance: Access personalized reports from our team.</li>
-          <li>Expert Guidance: Access personalized reports from our team.</li>
           <li>Community Support: Network with like-minded individuals.</li>
           <li>Weekly Sessions</li>
           <li>Daily Market Insights and Analysis</li>
@@ -44,7 +43,7 @@ const Index = ({ data, location }) => {
       </section> 
       <section id="contact"> 
         <h2>Contact Us</h2> 
-        <p>We'd love to hear from you! Reach out for gener inquiries, membership info, partnership opportunities, our referral program and more. Start your journey with Æther Capital Ventures today!</p> 
+        <p>We'd love to hear from you! Reach out for general inquiries, membership info, partnership opportunities, our referral program and more. Start your journey with Æther Capital Ventures today!</p> 
         <p>Contact Us: cdanielmejia33@gmail.com</p> 
       </section> 
     </Layout>
