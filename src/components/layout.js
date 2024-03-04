@@ -21,7 +21,7 @@ const Layout = ({ location, title, children }) => {
             <Col md={{ span: 10, offset: 1 }}>{children}</Col>
           </Row>
       </Container>
-      <footer>© {new Date().getFullYear()ÆCV}</footer>
+      <footer>© {new Date().getFullYear()}ÆCV</footer>
     </div>
     </Fragment>
   );
