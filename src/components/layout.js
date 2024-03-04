@@ -24,8 +24,7 @@ const Layout = ({ location, title, children }) => {
       <footer>© {new Date().getFullYear()}, ÆCV</footer>
     </div>
     </Fragment>
-    
-  )
+  );
 }
 
-export default Layout
+export default Layout;
