@@ -1,5 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
+import { Tab, Tabs } from 'react-bootstrap/Tab';
 
 
 import Layout from "../components/layout";
@@ -11,7 +12,15 @@ const Index = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <section id="about"> 
         <h2>About Us</h2> 
-        <p>Æther Capital Ventures (ÆCV) is a pioneering financial hub hosted by a team of analysts, investors, traders, and world-class IT &amp; Real Estate professionals bringing prime realty holdings and blockchain technology together for a more streamlined membership-based investing experience. Our mission is to make Real Estate investments more accessible by leveraging the security and transparency of blockchain technology in order to make the most out of valuable Real Estate market opportunities through specialized analysis.</p> 
+        <p>Æther Capital Ventures (ÆCV) is a pioneering financial hub hosted by a team of analysts, investors, traders, and world-class IT &amp; Real Estate professionals bringing prime realty holdings and blockchain technology together for a more streamlined membership-based investing experience. Our mission is to make Real Estate investments more accessible by leveraging the security and transparency of blockchain technology in order to make the most out of valuable Real Estate market opportunities through specialized analysis.</p>
+      </section> 
+      <section id="services"> 
+        <h2>Our services</h2> 
+        <ul>
+          <li>Cryptonyx Money Services.</li>
+          <li>Æther Investing.</li>
+          <li>Spark Academy Training.</li>
+        </ul> 
       </section> 
       <section id="invest"> 
         <h2>Invest with Confidence</h2> 
@@ -26,12 +35,12 @@ const Index = ({ data, location }) => {
           <li>Insider Knowledge: Stay ahead with exclusive market insights.</li>
           <li>Expert Guidance: Access personalized reports from our team.</li>
           <li>Community Support: Network with like-minded individuals.</li>
-          <li>Weekly Sessions</li>
-          <li>Daily Market Insights and Analysis</li>
-          <li>Private Community and Networking</li>
+          <li>Weekly Sessions.</li>
+          <li>Daily Market Insights and Analysis.</li>
+          <li>Private Community and Networking.</li>
         </ul>
-        <p>0.1 ETH one time fee + $20 (paid in Eth) per month for Membership Access.</p>
-        <p>Secure Your Seat Today! <a href="mailto:cdanielmejia33@gmail.com">Order Today!</a></p> 
+        <p>Subscribe today for Membership Access.</p>
+        <p>Secure Your Seat Today! <a href="mailto:contact@aethercapitalventures.com">Order Today!</a></p> 
       </section> 
       <section id="news"> 
         <h2>Latest News</h2> 
@@ -44,7 +53,7 @@ const Index = ({ data, location }) => {
       <section id="contact"> 
         <h2>Contact Us</h2> 
         <p>We'd love to hear from you! Reach out for general inquiries, membership info, partnership opportunities, our referral program and more. Start your journey with Æther Capital Ventures today!</p> 
-        <p>Contact Us: cdanielmejia33@gmail.com</p> 
+        <p>Contact Us: contact@aethercapitalventures.com</p> 
       </section> 
     </Layout>
   );
