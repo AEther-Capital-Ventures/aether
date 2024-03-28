@@ -96,16 +96,14 @@ footer {
 }
 
 .portfolioCard {
-  width: 26rem;
+  width: 100%;
   margin-bottom:  8px;
 }
 
 form {
   border: 1px solid black;
-  width: 25rem;
+  width: 100%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   padding: 5px;
 }
 
@@ -124,7 +122,7 @@ form label select {
 
 form button {
   display: block;
-  width: 95%;
+  width: 100%;
 }
 
 #headerBG {

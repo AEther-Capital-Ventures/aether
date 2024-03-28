@@ -84,18 +84,24 @@ const Index = ({ data, location }) => {
           <Tab eventKey="Cryptonyx" title="Cryptonyx">
             <h2>Cryptonyx</h2>
             <p>Money conversion service: USD-USDT & USDT-USD conversions at a flat 1% rate fee. Min Conversion amount $100</p>
-            <form name="Investing" method="POST" data-netlify="true">
-              <label>Email: <input type="email" name="email" /></label>
-              <label>public Wallet: <input type="text" name="wallet" /></label>
-              <label>Conversion Type: 
-                <select name="type[]">
-                  <option value="usd-usdt">USD &#x2192; USDT</option>
-                  <option value="usdt-usd">USDT &#x2192; USD</option>
-                </select>
-              </label>
-              <label>Amount: <input type="number" min="100" step="any" name="amount"></input></label>
-              <Button variant="primary" type="submit">Send Order</Button>
-            </form>
+            <Container fluid>
+              <Row className="justify-content-md-center">
+                <Col xs={12} md={6}>
+                  <form name="Investing" method="POST" data-netlify="true">
+                    <label>Email: <input type="email" name="email" /></label>
+                    <label>public Wallet: <input type="text" name="wallet" /></label>
+                    <label>Conversion Type: 
+                      <select name="type[]">
+                        <option value="usd-usdt">USD &#x2192; USDT</option>
+                        <option value="usdt-usd">USDT &#x2192; USD</option>
+                      </select>
+                    </label>
+                    <label>Amount: <input type="number" min="100" step="any" name="amount"></input></label>
+                    <Button variant="primary" type="submit">Send Order</Button>
+                  </form>
+                </Col>
+              </Row>
+            </Container>
           </Tab>
           <Tab eventKey="Æther Investing" title="Æther Investing">
             <h2>Invest with Confidence</h2> 
@@ -124,7 +130,7 @@ const Index = ({ data, location }) => {
             <Container fluid>
               <Row>
                 {investmentProducts.map((elm, index) => (
-                  <Col key={index} xs={5}>
+                  <Col key={index} xs={12} md={6}>
                     <Card className="portfolioCard">
                       <Card.Body>
                         <Card.Title>{elm.title}</Card.Title>
@@ -162,30 +168,42 @@ const Index = ({ data, location }) => {
                 ))}
               </Row>
             </Container>
-            <form name="Investing" method="POST" data-netlify="true">
-              <label>First Name: <input type="text" name="firstName" /></label>
-              <label>Last Name: <input type="text" name="lastName" /></label>
-              <label>Email: <input type="email" name="email" /></label>
-              <label>Portfolio Option: 
-                <select name="Portfolio[]" multiple>
-                  {investmentProducts.map((elm, index) => <option key={index} value={elm.id}>{elm.title}</option>)}
-                </select>
-              </label>
-              <Button variant="primary"  type="submit">Send Portfolio Request</Button>
-            </form>
+            <Container fluid>
+              <Row className="justify-content-md-center">
+                <Col xs={12} md={6}>
+                  <form name="Investing" method="POST" data-netlify="true">
+                    <label>First Name: <input type="text" name="firstName" /></label>
+                    <label>Last Name: <input type="text" name="lastName" /></label>
+                    <label>Email: <input type="email" name="email" /></label>
+                    <label>Portfolio Option: 
+                      <select name="Portfolio[]" multiple>
+                        {investmentProducts.map((elm, index) => <option key={index} value={elm.id}>{elm.title}</option>)}
+                      </select>
+                    </label>
+                    <Button variant="primary"  type="submit">Send Portfolio Request</Button>
+                  </form>
+                </Col>
+              </Row>
+            </Container>
           </Tab>
           <Tab eventKey="Spark Academy Training" title="Spark Academy Training">
             <p>Don't get left behind in a fast moving technological world. Our training program is meant for people who wish to invest in themselves to secure their financial future by becoming members and gain access to the best data sets. ÆCV provides you with vast financial opportunities and also take you from beginner to expert in the following fields: stock market trading, crypto trading, real estate and hard asset management and investing; and blockchain technologies.</p>
             <h2>Our Network</h2> 
             <p>Join a community of like-minded individuals and professionals committed to financial success.</p>
             <h2>Latest News</h2> 
-            <p>Stay informed about market trends, economic updates, and our latest investment strategies.</p> 
-            <form name="SparkAcademyTraining" method="POST" data-netlify="true">
-              <label>First Name: <input type="text" name="firstName" /></label>
-              <label>Last Name: <input type="text" name="lastName" /></label>
-              <label>Email: <input type="email" name="email" /></label>
-              <Button variant="primary"  type="submit">Send Training Request</Button>
-            </form>
+            <p>Stay informed about market trends, economic updates, and our latest investment strategies.</p>
+            <Container fluid>
+              <Row className="justify-content-md-center">
+                <Col xs={12} md={6}>
+                  <form name="SparkAcademyTraining" method="POST" data-netlify="true">
+                    <label>First Name: <input type="text" name="firstName" /></label>
+                    <label>Last Name: <input type="text" name="lastName" /></label>
+                    <label>Email: <input type="email" name="email" /></label>
+                    <Button variant="primary"  type="submit">Send Training Request</Button>
+                  </form>
+                </Col>
+              </Row>
+            </Container>
           </Tab>
         </Tabs>
         <hr/>
