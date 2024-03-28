@@ -25,25 +25,28 @@ body {
   max-height: 360px;
 }
 
+.global-header > div {
+  width: 100vw;
+  position: absolute;
+  top: 20px;
+  display: block;
+  text-align: center;
+}
+
 .global-header img {
   height: auto;
   max-width: 250px;
-  position: absolute;
-  top: 20px;
-  left: 45%;
-  right: 45%;
+  margin-bottom: 10px;
 }
 
 .global-header a {
   text-decoration: none;
   color: white;
   font-size: 1.2em;
-  position: absolute;
-  top: 280px;
-  text-align: center;
-  width: 100vw;
-  left: 0;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.75);
+  border-radius: 8px;
+  padding: 4px;
+  margin-top: 40px;
 }
 
 .navigation {

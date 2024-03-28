@@ -13,8 +13,10 @@ const Layout = ({ location, title, children }) => {
     <Fragment>
       <header className="global-header">
         <canvas id="headerBG"></canvas>
-        <img slt={title} src={"logo1.jpg"} alt={title}/>
-        <h1 className={isRootPath ? "main-heading" : "header-link-home"}><Link to={"/"}>{title}</Link></h1>
+        <div>
+          <img slt={title} src={"logo1.jpg"} alt={title}/>
+          <h1 className={isRootPath ? "main-heading" : "header-link-home"}><Link to={"/"}>{title}</Link></h1>
+        </div>
       </header>
       <div className="global-wrapper" data-is-root-path={isRootPath}>
       
