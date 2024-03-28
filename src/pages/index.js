@@ -138,11 +138,11 @@ const Index = ({ data, location }) => {
       <h2>Invest with Confidence</h2> 
         <p>Investing with us is simple and secure. Our Ethereum-based smart contracts enable you to invest in our real estate investment pool directly from the Block Explorer.</p> 
         <h3>How It Works</h3> 
-        <p>You put Ethereum into the real estate investment pool and let it grow over time. While assets generate gains, the value of the pool increases giving more value per share. Your investment is managed seamlessly through our platform, and all transactions are always available for viewing directly from the blockchain. </p>
-        <h3>Discover ÆCV:</h3> 
+        <p>You put money into the fund and let it grow over time. While assets generate gains, the value of the fund increases giving more value per share. Your investment is managed seamlessly through our platform, and all transactions are always available for viewing directly from the blockchain and our publications. </p>
+        <h3>Discover ÆCV:</h3>
         <p>Join Our Exclusive Investment Network!</p> 
         <ul>
-          <li>Secure Your Future: Start planning your retirement today.</li>
+          <li>Secure Your Future: contribute to your retirement today.</li>
           <li>Wealth Growth: Learn strategies to grow your wealth effectively.</li>
           <li>Insider Knowledge: Stay ahead with exclusive market insights.</li>
           <li>Expert Guidance: Access personalized reports from our team.</li>
@@ -151,8 +151,8 @@ const Index = ({ data, location }) => {
           <li>Daily Market Insights and Analysis.</li>
           <li>Private Community and Networking.</li>
         </ul>
-        <p>Subscribe today for Membership Access.</p>
-        <p>Secure Your Seat Today! <a href="mailto:contact@aethercapitalventures.com">Order Today!</a></p> 
+        <p>Subscribe today for Exclusive Access!</p>
+        <p><a href="mailto:contact@aethercapitalventures.com">Join us!</a></p> 
       </section> 
       <section id="news"> 
         <h2>Latest News</h2> 
@@ -165,7 +165,7 @@ const Index = ({ data, location }) => {
       <section id="contact"> 
         <h2>Contact Us</h2> 
         <p>We'd love to hear from you! Reach out for general inquiries, membership info, partnership opportunities, our referral program and more. Start your journey with Æther Capital Ventures today!</p> 
-        <p>Contact Us: contact@aethercapitalventures.com</p> 
+        <p>Contact us: contact@aethercapitalventures.com</p> 
       </section> 
     </Layout>
   );
