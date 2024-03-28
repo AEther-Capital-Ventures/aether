@@ -39,7 +39,7 @@ const Index = ({ data, location }) => {
                 <td>Dynamic</td>
               </tr>
               <tr>
-                <td>Real Estate, Real Asset Investment Fund</td>
+                <td>Real Estate & Hard Asset Investment Fund</td>
                 <td>Dynamic</td>
               </tr>
               <tr>
@@ -59,7 +59,7 @@ const Index = ({ data, location }) => {
                 <td>5%</td>
               </tr>
               <tr>
-                <td>Real Estate, Real Asset Investment Fund</td>
+                <td>Real Estate & Hard Asset Investment Fund</td>
                 <td>10%</td>
               </tr>
               <tr>
@@ -79,7 +79,7 @@ const Index = ({ data, location }) => {
                 <td>10%</td>
               </tr>
               <tr>
-                <td>Real Estate, Real Asset Investment Fund</td>
+                <td>Real Estate & Hard Asset Investment Fund</td>
                 <td>20%</td>
               </tr>
               <tr>
@@ -99,7 +99,7 @@ const Index = ({ data, location }) => {
                 <td>20%</td>
               </tr>
               <tr>
-                <td>Real Estate, Real Asset Investment Fund</td>
+                <td>Real Estate & Hard Asset Investment Fund</td>
                 <td>20%</td>
               </tr>
               <tr>
@@ -112,14 +112,14 @@ const Index = ({ data, location }) => {
             <table>
               <tr>
                 <td>Low-Yield Stable Fund</td>
-                <td>25%</td>
+                <td>20%</td>
               </tr>
               <tr>
                 <td>High-Yield High-Risk Fund</td>
-                <td>35%</td>
+                <td>40%</td>
               </tr>
               <tr>
-                <td>Real Estate, Real Asset Investment Fund</td>
+                <td>Real Estate & Hard Asset Investment Fund</td>
                 <td>20%</td>
               </tr>
               <tr>
@@ -130,7 +130,7 @@ const Index = ({ data, location }) => {
           </li>
           <li>
             <h1>Spark Academy Training</h1>
-              <p>Don't get left behind in a fast moving technological world. Our training program is meant for people who wish to invest in themselves to secure their financial future by becoming members and gain access to the best data sets. ÆCV provides you with vast financial opportunities and also take you from beginner to expert in the following fields: stock market trading, crypto trading, real estate and hard asset management and investing; and blockchain technologies.</p>
+              <p>Don't get left behind amidst an ever-changing technological world. Our training program is meant for people who wish to invest in themselves to secure their financial future by becoming members and gain access to the best data sets. ÆCV provides you with vast financial opportunities and also take you from beginner to expert in the following fields: stock market trading, crypto trading, real estate and hard asset management and investing; and finally, blockchain technologies.</p>
           </li>
         </ul>
       </section>
@@ -165,7 +165,7 @@ const Index = ({ data, location }) => {
       <section id="contact"> 
         <h2>Contact Us</h2> 
         <p>We'd love to hear from you! Reach out for general inquiries, membership info, partnership opportunities, our referral program and more. Start your journey with Æther Capital Ventures today!</p> 
-        <p>Contact us: contact@aethercapitalventures.com</p> 
+        <p>Contact us at: contact@aethercapitalventures.com</p> 
       </section> 
     </Layout>
   );
