@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
-import { Link } from "gatsby";
+import { withPrefix, Link } from "gatsby";
 import { Container, Row, Col } from "react-bootstrap";
+import Helmet from "react-helmet";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,18 +12,22 @@ const Layout = ({ location, title, children }) => {
   return (
     <Fragment>
       <header className="global-header">
+        <canvas id="headerBG"></canvas>
         <img slt={title} src={"logo1.jpg"} alt={title}/>
         <h1 className={isRootPath ? "main-heading" : "header-link-home"}><Link to={"/"}>{title}</Link></h1>
       </header>
       <div className="global-wrapper" data-is-root-path={isRootPath}>
       
-      <Container className="main-content">
-          <Row>
-            <Col md={{ span: 10, offset: 1 }}>{children}</Col>
-          </Row>
-      </Container>
-      <footer>©{new Date().getFullYear()} ÆCV. All rights reserved.</footer>
-    </div>
+        <Container className="main-content">
+            <Row>
+              <Col md={{ span: 10, offset: 1 }}>{children}</Col>
+            </Row>
+        </Container>
+        <footer>©{new Date().getFullYear()} ÆCV. All rights reserved.</footer>
+      </div>
+      <Helmet>
+        <script src={withPrefix('projector.js')} type="text/javascript" />
+      </Helmet>
     </Fragment>
   );
 }

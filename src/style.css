@@ -15,17 +15,28 @@ body {
   width: 100vw;
   text-align: center;
   padding: 10px;
+  max-height: 360px;
 }
 
 .global-header img {
   height: auto;
   max-width: 250px;
+  position: absolute;
+  top: 20px;
+  left: 45%;
+  right: 45%;
 }
 
 .global-header a {
   text-decoration: none;
   color: white;
   font-size: 1.2em;
+  position: absolute;
+  top: 280px;
+  text-align: center;
+  width: 100vw;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
 }
 
 .navigation {
@@ -76,3 +87,41 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+.portfolioCard {
+  width: 26rem;
+  margin-bottom:  8px;
+}
+
+form {
+  border: 1px solid black;
+  width: 25rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+}
+
+form label {
+  display: block;
+  width: 100%;
+}
+
+form label input,
+form label select {
+  width: 100%;
+  display: block;
+  margin-bottom: 8px;
+  padding: 3px;
+}
+
+form button {
+  display: block;
+  width: 95%;
+}
+
+#headerBG {
+  width: 100vw;
+  height: 345px;
+  background-color: black;
+} 
