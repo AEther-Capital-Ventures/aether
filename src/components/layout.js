@@ -5,12 +5,39 @@ import Helmet from "react-helmet";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const socialMediaButtons = [
+  {
+    url: "https://twitter.com/AETHERCV",
+    icon: "fa-brands fa-square-x-twitter",
+    label: "Twitter"
+  },
+  {
+    url: "https://www.instagram.com/aethercapitalventures",
+    icon: "fa-brands fa-square-instagram",
+    label: "Instagram"
+  },
+  {
+    url: "https://www.patreon.com/aethercapitalventures",
+    icon: "fa-brands fa-patreon",
+    label: "Patreon"
+  },
+  {
+    url: "mailto:contact@aethercapitalventures.com",
+    icon: "fa-regular fa-envelope",
+    label: "email"
+  }
+];
+
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
 
   return (
     <Fragment>
+      <Helmet>
+        <link rel="stylesheet" type="text/css" href={withPrefix('fontawesome-free-6.5.1-web/css/all.css')} media="screen" />
+        <script src={withPrefix('projector.js')} type="text/javascript" />
+      </Helmet>
       <header className="global-header">
         <canvas id="headerBG"></canvas>
         <div>
@@ -25,11 +52,15 @@ const Layout = ({ location, title, children }) => {
               <Col md={{ span: 10, offset: 1 }}>{children}</Col>
             </Row>
         </Container>
-        <footer>©{new Date().getFullYear()} ÆCV. All rights reserved.</footer>
+        <footer>
+          <span>©{new Date().getFullYear()} ÆCV. All rights reserved.</span>
+          <div className="socialMediaButtons">
+            {socialMediaButtons.map((elm, index) => (
+              <a key={index} href={elm.url} role="button" title={elm.label} aria-label={elm.label} target="_blank" rel="noreferrer"><i className={`${elm.icon} fa-2xl`}></i></a>
+            ))}
+          </div>
+        </footer>
       </div>
-      <Helmet>
-        <script src={withPrefix('projector.js')} type="text/javascript" />
-      </Helmet>
     </Fragment>
   );
 }
