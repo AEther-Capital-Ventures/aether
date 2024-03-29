@@ -34,7 +34,7 @@ const investmentProducts = [
     id: "premium",
     title: "Premium Portfolio",
     description: "",
-    paymentInfo: "",
+    paymentInfo: "$100 per month",
     fundProps: {
       LowYieldStable: "60%",
       HighYieldHighRisk: "10%",
@@ -46,7 +46,7 @@ const investmentProducts = [
     id: "premiumP",
     title: "Premium+ Portfolio",
     description: "",
-    paymentInfo: "",
+    paymentInfo: "$250 per month",
     fundProps: {
       LowYieldStable: "40%",
       HighYieldHighRisk: "20%",
@@ -58,14 +58,38 @@ const investmentProducts = [
     id: "executive",
     title: "Executive Portfolio",
     description: "",
-    paymentInfo: "",
+    paymentInfo: "$800 per month",
     fundProps: {
       LowYieldStable: "25%",
       HighYieldHighRisk: "35%",
       RealEstateRealAsset: "20%",
       EntrepreneurInvestment: "20%"
     }
-  }
+  },
+  {
+    id: "tuition",
+    title: "Education/Tuition Fund",
+    description: "",
+    paymentInfo: "Dynamic. No minimum.",
+    fundProps: {
+      LowYieldStable: "80%",
+      HighYieldHighRisk: "5%",
+      RealEstateRealAsset: "15%",
+      EntrepreneurInvestment: "0%"
+    }
+  },
+  {
+    id: "retirement",
+    title: "Retirement fund",
+    description: "",
+    paymentInfo: "Dynamic. No minimum.",
+    fundProps: {
+      LowYieldStable: "80%",
+      HighYieldHighRisk: "5%",
+      RealEstateRealAsset: "15%",
+      EntrepreneurInvestment: "0%"
+    }
+  },
 ];
 
 
@@ -76,20 +100,20 @@ const Index = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <section id="about"> 
         <h2>About Us</h2> 
-          <p>Æther Capital Ventures (ÆCV) is a pioneering financial hub hosted by a team of analysts, investors, traders, and world-class IT &amp; Real Estate professionals, bringing prime realty holdings, traditional investment vehicles, and blockchain technology together for a clean, streamlined membership-based investing experience. Our mission is to provide financial opportunities to investors and partners that would otherwise be unavailable in the modern environment. Our business network serves its clients, members and partners by utilizing the collective expertise and technical knowledge its Founding Team.</p>
+          <p>Æther Capital Ventures (ÆCV) is a pioneering financial hub hosted by a team of analysts, investors, traders, and world-class IT &amp; Real Estate professionals, bringing prime realty holdings, traditional investment vehicles, and blockchain technology together for an optimal membership-based investing experience. Our mission is to provide financial opportunities to investors and partners that would otherwise be elusive in the midst of an ever-evolving technological & financial environment. Our business network is meant to serve its clients and members by making the collective expertise and technical knowledge of its Founding Team and Partners accessible to all.</p>
       </section> 
       <section id="services">
         <h1>Our services</h1> 
         <Tabs defaultActiveKey="Cryptonyx" id="services-tabs" className="mb-3">
           <Tab eventKey="Cryptonyx" title="Cryptonyx">
             <h2>Cryptonyx</h2>
-            <p>Money conversion service: USD-USDT & USDT-USD conversions at a flat 1% rate fee. Min Conversion amount $100</p>
+            <p>Money conversion service: USD-USDT & USDT-USD conversions at a flat 1% rate fee. Minimum Conversion amount: $100</p>
             <Container fluid>
               <Row className="justify-content-md-center">
                 <Col xs={12} md={6}>
                   <form name="Investing" method="POST" data-netlify="true">
                     <label>Email: <input type="email" name="email" /></label>
-                    <label>public Wallet: <input type="text" name="wallet" /></label>
+                    <label>Public wallet address: <input type="text" name="wallet" /></label>
                     <label>Conversion Type: 
                       <select name="type[]">
                         <option value="usd-usdt">USD &#x2192; USDT</option>
@@ -124,7 +148,7 @@ const Index = ({ data, location }) => {
             <ul>
               <li>ÆCV innovates with optimization capabilities that make Real Estate asset management considerably more efficient by leveraging the security, speed, transparency and availability of blockchain technology in order to make the most out of valuable Real Estate market opportunities through specialized & strategic analysis.</li>
               <li>The user may define which Investment Tier they would like to adhere to, and track it over time on the platform.</li>
-              <li>The network provides clients, members and partners with portfolio management solutions; education/tuition fund for parents looking to save money for their children's education; and a retirement fund.</li>
+              <li>The network provides clients, members and partners with portfolio management solutions; an education/tuition fund for parents who wish to save money for their children's education; and a retirement fund.</li>
             </ul>
             <h2>Portfolio Options:</h2>
             <Container fluid>
@@ -152,11 +176,11 @@ const Index = ({ data, location }) => {
                               <td>{elm.fundProps.HighYieldHighRisk}</td>
                             </tr>
                             <tr>
-                              <td>Real Estate, Real Asset Investment Fund</td>
+                              <td>Real Estate-Hard Asset Fund</td>
                               <td>{elm.fundProps.RealEstateRealAsset}</td>
                             </tr>
                             <tr>
-                              <td>Entrepreneur Investment Fund</td>
+                              <td>Entrepreneur/Startup Fund</td>
                               <td>{elm.fundProps.EntrepreneurInvestment}</td>
                             </tr>
                           </tbody>
