@@ -133,3 +133,12 @@ form button {
   height: 345px;
   background-color: black;
 } 
+
+.socialMediaButtons > a {
+  color: white;
+  margin: 4px;
+}
+
+.socialMediaButtons > a:hover {
+  color: rgb(20, 225, 240);
+}
