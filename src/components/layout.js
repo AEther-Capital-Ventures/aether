@@ -49,7 +49,7 @@ const Layout = ({ location, title, children }) => {
             </Row>
         </Container>
         <footer>
-          <span>©{new Date().getFullYear()} ÆCV. All rights reserved.</span>
+          <span>Copyright © {new Date().getFullYear()} ÆCV.</span>
           <div className="socialMediaButtons">
             {socialMediaButtons.map((elm, index) => (
               <a key={index} href={elm.url} role="button" title={elm.label} aria-label={elm.label} target="_blank" rel="noreferrer"><i className={`${elm.icon} fa-2xl`}></i></a>
