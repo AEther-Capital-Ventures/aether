@@ -96,6 +96,19 @@ const investmentProducts = [
 const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
 
+  const encode = data => Object.keys(data).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&");
+  const handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ ...this.state })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
+
   return (
     <Layout location={location} title={siteTitle}>
       <section id="about"> 
@@ -111,7 +124,8 @@ const Index = ({ data, location }) => {
             <Container fluid>
               <Row className="justify-content-md-center">
                 <Col xs={12} md={6}>
-                  <form name="Exchange" method="POST" data-netlify="true">
+                  <form name="Exchange" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+                    <input type="hidden" name="form-name" value="Exchange" />
                     <label>Email: <input type="email" name="email" /></label>
                     <label>Public wallet address: <input type="text" name="wallet" /></label>
                     <label>Conversion Type: 
@@ -195,7 +209,8 @@ const Index = ({ data, location }) => {
             <Container fluid>
               <Row className="justify-content-md-center">
                 <Col xs={12} md={6}>
-                  <form name="Investing" method="POST" data-netlify="true">
+                  <form name="Investing" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+                    <input type="hidden" name="form-name" value="Investing" />
                     <label>First Name: <input type="text" name="firstName" /></label>
                     <label>Last Name: <input type="text" name="lastName" /></label>
                     <label>Email: <input type="email" name="email" /></label>
@@ -219,7 +234,8 @@ const Index = ({ data, location }) => {
             <Container fluid>
               <Row className="justify-content-md-center">
                 <Col xs={12} md={6}>
-                  <form name="Training" method="POST" data-netlify="true">
+                  <form name="Training" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+                    <input type="hidden" name="form-name" value="Training" />
                     <label>First Name: <input type="text" name="firstName" /></label>
                     <label>Last Name: <input type="text" name="lastName" /></label>
                     <label>Email: <input type="email" name="email" /></label>
