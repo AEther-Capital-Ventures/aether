@@ -8,21 +8,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const socialMediaButtons = [
   {
     url: "https://twitter.com/AETHERCV",
-    icon: "fa-square-x-twitter",
+    icon: "fa-brands fa-square-x-twitter",
     label: "Twitter"
   },
   {
     url: "https://www.instagram.com/aethercapitalventures",
-    icon: "fa-square-instagram",
+    icon: "fa-brands fa-square-instagram",
     label: "Instagram"
   },
   {
     url: "https://www.patreon.com/aethercapitalventures",
-    icon: "fa-patreon",
+    icon: "fa-brands fa-patreon",
     label: "Patreon"
+  },
+  {
+    url: "mailto:contact@aethercapitalventures.com",
+    icon: "fa-regular fa-envelope",
+    label: "email"
   }
 ];
-
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
@@ -52,7 +56,7 @@ const Layout = ({ location, title, children }) => {
           <p>©{new Date().getFullYear()} ÆCV. All rights reserved.</p>
           <div className="socialMediaButtons">
             {socialMediaButtons.map((elm, index) => (
-              <a key={index} href={elm.url} role="button" title={elm.label} aria-label={elm.label} target="_blank" rel="noreferrer"><i className={`fa-brands ${elm.icon} fa-2xl`}></i></a>
+              <a key={index} href={elm.url} role="button" title={elm.label} aria-label={elm.label} target="_blank" rel="noreferrer"><i className={`${elm.icon} fa-2xl`}></i></a>
             ))}
           </div>
         </footer>
