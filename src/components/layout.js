@@ -34,10 +34,6 @@ const Layout = ({ location, title, children }) => {
 
   return (
     <Fragment>
-      <Helmet>
-        <link rel="stylesheet" type="text/css" href={withPrefix('fontawesome-free-6.5.1-web/css/all.css')} media="screen" />
-        <script src={withPrefix('projector.js')} type="text/javascript" />
-      </Helmet>
       <header className="global-header">
         <canvas id="headerBG"></canvas>
         <div>
@@ -61,6 +57,10 @@ const Layout = ({ location, title, children }) => {
           </div>
         </footer>
       </div>
+      <Helmet>
+        <link rel="stylesheet" type="text/css" href={withPrefix('fontawesome-free-6.5.1-web/css/all.css')} media="screen" />
+        <script src={withPrefix('projector.js')} type="text/javascript" />
+      </Helmet>
     </Fragment>
   );
 }
