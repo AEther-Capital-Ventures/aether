@@ -241,9 +241,11 @@ const Index = ({ data, location }) => {
         </Tabs>
         <hr/>
       </section>
-      <section>
+      <section id="network">
         <h2>Our Network</h2> 
         <p>Join a community of like-minded individuals and professionals committed to financial success.</p>
+      </section>
+      <section id="news">
         <h2>Latest News</h2> 
         <p>Stay informed about market trends, economic updates, and our latest investment strategies.</p>
       </section>
