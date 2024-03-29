@@ -111,7 +111,7 @@ const Index = ({ data, location }) => {
             <Container fluid>
               <Row className="justify-content-md-center">
                 <Col xs={12} md={6}>
-                  <form name="Investing" method="POST" data-netlify="true">
+                  <form name="Exchange" method="POST" data-netlify="true">
                     <label>Email: <input type="email" name="email" /></label>
                     <label>Public wallet address: <input type="text" name="wallet" /></label>
                     <label>Conversion Type: 
@@ -219,7 +219,7 @@ const Index = ({ data, location }) => {
             <Container fluid>
               <Row className="justify-content-md-center">
                 <Col xs={12} md={6}>
-                  <form name="SparkAcademyTraining" method="POST" data-netlify="true">
+                  <form name="Training" method="POST" data-netlify="true">
                     <label>First Name: <input type="text" name="firstName" /></label>
                     <label>Last Name: <input type="text" name="lastName" /></label>
                     <label>Email: <input type="email" name="email" /></label>
