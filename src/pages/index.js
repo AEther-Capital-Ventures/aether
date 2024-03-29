@@ -112,14 +112,14 @@ const Index = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <section id="about"> 
-        <h2>About Us</h2> 
+        <h1>About Us</h1> 
           <p>Æther Capital Ventures (ÆCV) is a pioneering financial hub hosted by a team of analysts, investors, traders, and world-class IT &amp; Real Estate professionals, bringing prime realty holdings, traditional investment vehicles, and blockchain technology together for an optimal membership-based investing experience. Our mission is to provide financial opportunities to investors and partners that would otherwise be elusive in the midst of an ever-evolving technological & financial environment. Our business network is meant to serve its clients and members by making the collective expertise and technical knowledge of its Founding Team and Partners accessible to all.</p>
       </section> 
       <section id="services">
         <h1>Our services</h1> 
         <Tabs defaultActiveKey="Cryptonyx" id="services-tabs" className="mb-3">
           <Tab eventKey="Cryptonyx" title="Cryptonyx">
-            <h2>Cryptonyx</h2>
+            <h3>Cryptonyx</h3>
             <p>Money conversion service: USD-USDT & USDT-USD conversions at a flat 1% rate fee. Minimum Conversion amount: $100</p>
             <Container fluid>
               <Row className="justify-content-md-center">
@@ -142,10 +142,6 @@ const Index = ({ data, location }) => {
             </Container>
           </Tab>
           <Tab eventKey="Æther Investing" title="Æther Investing">
-            <h2>Invest with Confidence</h2> 
-            <p>Investing with us is simple and secure. Our Ethereum-based smart contracts enable you to invest in our real estate investment pool directly from the Block Explorer.</p> 
-            <h3>How It Works</h3> 
-            <p>You put money into the fund and let it grow over time. While assets generate gains, the value of the fund increases giving more value per share. Your investment is managed seamlessly through our platform, and all transactions are always available for viewing directly from the blockchain and our publications. </p>
             <h3>Discover ÆCV:</h3>
             <p>Join Our Exclusive Investment Network!</p> 
             <ul>
@@ -158,13 +154,13 @@ const Index = ({ data, location }) => {
               <li>Daily Market Insights and Analysis.</li>
               <li>Private Community and Networking.</li>
             </ul>
-            <p>Subscribe today for Exclusive Access!</p>
+            <p><b>Subscribe today for Exclusive Access!</b></p>
             <ul>
-              <li>ÆCV innovates with optimization capabilities that make Real Estate asset management considerably more efficient by leveraging the security, speed, transparency and availability of blockchain technology in order to make the most out of valuable Real Estate market opportunities through specialized & strategic analysis.</li>
-              <li>The user may define which Investment Tier they would like to adhere to, and track it over time on the platform.</li>
-              <li>The network provides clients, members and partners with portfolio management solutions; an education/tuition fund for parents who wish to save money for their children's education; and a retirement fund.</li>
+              <li>ÆCV innovates with optimization capabilities that make Real Estate asset management considerably more efficient by leveraging the security, speed, transparency and availability of blockchain technology in order to make the most out of valuable Real Estate market opportunities through specialized strategic analysis and cutting-edge technological implementations.</li>
+              <li>The user may define which Portfolio Option they would like to adhere to and track it over time on the platform.</li>
+              <li>The ÆCV network's investment service provides clients, members and partners with portfolio management solutions; an education/tuition fund; and a retirement fund.</li>
             </ul>
-            <h2>Portfolio Options:</h2>
+            <h3>Portfolio Options:</h3>
             <Container fluid>
               <Row>
                 {investmentProducts.map((elm, index) => (
@@ -226,11 +222,8 @@ const Index = ({ data, location }) => {
             </Container>
           </Tab>
           <Tab eventKey="Spark Academy Training" title="Spark Academy Training">
-            <p>Don't get left behind in a fast moving technological world. Our training program is meant for people who wish to invest in themselves to secure their financial future by becoming members and gain access to the best data sets. ÆCV provides you with vast financial opportunities and also take you from beginner to expert in the following fields: stock market trading, crypto trading, real estate and hard asset management and investing; and blockchain technologies.</p>
-            <h2>Our Network</h2> 
-            <p>Join a community of like-minded individuals and professionals committed to financial success.</p>
-            <h2>Latest News</h2> 
-            <p>Stay informed about market trends, economic updates, and our latest investment strategies.</p>
+            <h3>Spark Academy</h3>
+            <p>Join us successfully navigating the fast moving technological world we find ourselves in. Our training program is meant for people who wish to invest in themselves to secure their financial future by becoming members and gain access to the best data sets. ÆCV provides you with vast financial opportunities and also take you from beginner to expert in the following fields: stock market trading, crypto trading, real estate and hard asset management and investing; and blockchain technologies.</p>
             <Container fluid>
               <Row className="justify-content-md-center">
                 <Col xs={12} md={6}>
@@ -248,10 +241,15 @@ const Index = ({ data, location }) => {
         </Tabs>
         <hr/>
       </section>
+      <section>
+        <h2>Our Network</h2> 
+        <p>Join a community of like-minded individuals and professionals committed to financial success.</p>
+        <h2>Latest News</h2> 
+        <p>Stay informed about market trends, economic updates, and our latest investment strategies.</p>
+      </section>
       <section id="contact"> 
         <h2>Contact Us</h2> 
         <p>We'd love to hear from you! Reach out for general inquiries, membership info, partnership opportunities, our referral program and more. Start your journey with Æther Capital Ventures today!</p> 
-        <p><a href="mailto:contact@aethercapitalventures.com">Contact us</a></p> 
       </section> 
     </Layout>
   );
