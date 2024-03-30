@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { Container, Row, Col, Card, Tab, Tabs, Table, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card, Tab, Tabs, Table, Button, Nav } from 'react-bootstrap';
 
 
 import Layout from "../components/layout";
@@ -163,43 +163,60 @@ const Index = ({ data, location }) => {
             <h3>Portfolio Options:</h3>
             <Container fluid>
               <Row>
-                {investmentProducts.map((elm, index) => (
-                  <Col key={index} xs={12} md={6}>
-                    <Card className="portfolioCard">
-                      <Card.Body>
-                        <Card.Title>{elm.title}</Card.Title>
-                        <Card.Text>{elm.description}</Card.Text>
-                        <Table striped bordered hover>
-                          <thead>
-                            <tr>
-                              <th>#</th>
-                              <th>%</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>Low-Yield Stable Fund</td>
-                              <td>{elm.fundProps.LowYieldStable}</td>
-                            </tr>
-                            <tr>
-                              <td>High-Yield High-Risk Fund</td>
-                              <td>{elm.fundProps.HighYieldHighRisk}</td>
-                            </tr>
-                            <tr>
-                              <td>Real Estate-Hard Asset Fund</td>
-                              <td>{elm.fundProps.RealEstateRealAsset}</td>
-                            </tr>
-                            <tr>
-                              <td>Entrepreneur/Startup Fund</td>
-                              <td>{elm.fundProps.EntrepreneurInvestment}</td>
-                            </tr>
-                          </tbody>
-                        </Table>
-                        <blockquote className="blockquote mb-0">{elm.paymentInfo}</blockquote>
-                      </Card.Body>
-                    </Card>
+              <Tab.Container id="left-tabs-example" defaultActiveKey={investmentProducts[0].id}>
+                <Row>
+                  <Col sm={3}>
+                    <Nav variant="pills" className="flex-column">
+                    {investmentProducts.map((elm, index) => (
+                      <Nav.Item key={index}>
+                        <Nav.Link eventKey={elm.id}>{elm.title}</Nav.Link>
+                      </Nav.Item>
+                      ))}
+                    </Nav>
                   </Col>
-                ))}
+                  <Col sm={9}>
+                    <Tab.Content>
+                      {investmentProducts.map((elm, index) => (
+                        <Tab.Pane key={index} eventKey={elm.id}>
+                          <Card className="portfolioCard">
+                            <Card.Body>
+                              <Card.Title>{elm.title}</Card.Title>
+                              <Card.Text>{elm.description}</Card.Text>
+                                <Table striped bordered hover>
+                                  <thead>
+                                    <tr>
+                                      <th>#</th>
+                                      <th>%</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>Low-Yield Stable Fund</td>
+                                      <td>{elm.fundProps.LowYieldStable}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>High-Yield High-Risk Fund</td>
+                                      <td>{elm.fundProps.HighYieldHighRisk}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Real Estate-Hard Asset Fund</td>
+                                      <td>{elm.fundProps.RealEstateRealAsset}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Entrepreneur/Startup Fund</td>
+                                      <td>{elm.fundProps.EntrepreneurInvestment}</td>
+                                    </tr>
+                                  </tbody>
+                                </Table>
+                                <blockquote className="blockquote mb-0">{elm.paymentInfo}</blockquote>
+                              </Card.Body>
+                            </Card>
+                        </Tab.Pane>
+                      ))}
+                    </Tab.Content>
+                  </Col>
+                </Row>
+              </Tab.Container>
               </Row>
             </Container>
             <Container fluid>
