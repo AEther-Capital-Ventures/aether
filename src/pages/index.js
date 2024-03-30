@@ -8,7 +8,7 @@ import Layout from "../components/layout";
 const investmentProducts = [
   {
     id: "base",
-    title: "Base Portfolio",
+    title: "Base",
     description: "",
     paymentInfo: "Dynamic Payment, Min balance $500",
     fundProps: {
@@ -20,7 +20,7 @@ const investmentProducts = [
   },
   {
     id: "standard",
-    title: "Standard Portfolio",
+    title: "Standard",
     description: "",
     paymentInfo: "$20 per month",
     fundProps: {
@@ -32,7 +32,7 @@ const investmentProducts = [
   },
   {
     id: "premium",
-    title: "Premium Portfolio",
+    title: "Premium",
     description: "",
     paymentInfo: "$100 per month",
     fundProps: {
@@ -44,7 +44,7 @@ const investmentProducts = [
   },
   {
     id: "premiumP",
-    title: "Premium+ Portfolio",
+    title: "Premium+",
     description: "",
     paymentInfo: "$250 per month",
     fundProps: {
@@ -56,7 +56,7 @@ const investmentProducts = [
   },
   {
     id: "executive",
-    title: "Executive Portfolio",
+    title: "Executive",
     description: "",
     paymentInfo: "$800 per month",
     fundProps: {
