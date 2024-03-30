@@ -165,7 +165,7 @@ const Index = ({ data, location }) => {
               <Row>
               <Tab.Container id="left-tabs-example" defaultActiveKey={investmentProducts[0].id}>
                 <Row>
-                  <Col sm={3}>
+                  <Col sm={12} md={3}>
                     <Nav variant="pills" className="flex-column">
                     {investmentProducts.map((elm, index) => (
                       <Nav.Item key={index}>
@@ -174,7 +174,7 @@ const Index = ({ data, location }) => {
                       ))}
                     </Nav>
                   </Col>
-                  <Col sm={9}>
+                  <Col sm={12} md={9}>
                     <Tab.Content>
                       {investmentProducts.map((elm, index) => (
                         <Tab.Pane key={index} eventKey={elm.id}>
