@@ -1,69 +1,49 @@
 import * as React from "react";
+import { useState } from 'react';
 import { graphql } from "gatsby";
-import { Container, Row, Col, Card, Tab, Tabs, Table, Button, Nav } from 'react-bootstrap';
+import { Container, Row, Col, Tab, Tabs, Button, Nav } from 'react-bootstrap';
+import RiskToleranceCard from "../components/RiskToleranceCard";
 
 
 import Layout from "../components/layout";
 
 const investmentProducts = [
   {
-    id: "base",
-    title: "Base",
+    id: "invest",
+    title: "Growth Investment",
     description: "",
-    paymentInfo: "Dynamic Payment, Min balance $500",
-    fundProps: {
-      LowYieldStable: "Dynamic",
-      HighYieldHighRisk: "Dynamic",
-      RealEstateRealAsset: "Dynamic",
-      EntrepreneurInvestment: "Dynamic"
-    }
-  },
-  {
-    id: "standard",
-    title: "Standard",
-    description: "",
-    paymentInfo: "$20 per month",
-    fundProps: {
-      LowYieldStable: "80%",
-      HighYieldHighRisk: "5%",
-      RealEstateRealAsset: "10%",
-      EntrepreneurInvestment: "5%"
-    }
-  },
-  {
-    id: "premium",
-    title: "Premium",
-    description: "",
-    paymentInfo: "$100 per month",
-    fundProps: {
-      LowYieldStable: "60%",
-      HighYieldHighRisk: "10%",
-      RealEstateRealAsset: "20%",
-      EntrepreneurInvestment: "10%"
-    }
-  },
-  {
-    id: "premiumP",
-    title: "Premium+",
-    description: "",
-    paymentInfo: "$250 per month",
-    fundProps: {
-      LowYieldStable: "40%",
-      HighYieldHighRisk: "20%",
-      RealEstateRealAsset: "20%",
-      EntrepreneurInvestment: "20%"
-    }
-  },
-  {
-    id: "executive",
-    title: "Executive",
-    description: "",
-    paymentInfo: "$800 per month",
-    fundProps: {
-      LowYieldStable: "25%",
-      HighYieldHighRisk: "35%",
-      RealEstateRealAsset: "20%",
-      EntrepreneurInvestment: "20%"
+    paymentInfo: "Min balance $20",
+    riskTolerance: {
+      low: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      },
+      moderateLow: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      },
+      moderate: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      },
+      modeerateHigh: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      },
+      High: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      }
     }
   },
   {
@@ -71,11 +51,37 @@ const investmentProducts = [
     title: "Education/Tuition Fund",
     description: "",
     paymentInfo: "Dynamic. No minimum.",
-    fundProps: {
-      LowYieldStable: "80%",
-      HighYieldHighRisk: "5%",
-      RealEstateRealAsset: "15%",
-      EntrepreneurInvestment: "0%"
+    riskTolerance: {
+      low: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      },
+      moderateLow: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      },
+      moderate: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      },
+      modeerateHigh: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      },
+      High: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      }
     }
   },
   {
@@ -83,17 +89,45 @@ const investmentProducts = [
     title: "Retirement fund",
     description: "",
     paymentInfo: "Dynamic. No minimum.",
-    fundProps: {
-      LowYieldStable: "80%",
-      HighYieldHighRisk: "5%",
-      RealEstateRealAsset: "15%",
-      EntrepreneurInvestment: "0%"
+    riskTolerance: {
+      low: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      },
+      moderateLow: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      },
+      moderate: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      },
+      modeerateHigh: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      },
+      High: {
+        LowYieldStable: "Dynamic",
+        HighYieldHighRisk: "Dynamic",
+        RealEstateRealAsset: "Dynamic",
+        EntrepreneurInvestment: "Dynamic"
+      }
     }
   },
 ];
 
 
 const Index = ({ data, location }) => {
+  const [PortfolioIndex, setPortfolioItem] = useState(0);
+  const [riskToleranceIndex, setRiskTolerance] = useState(0);
   const siteTitle = data.site.siteMetadata?.title || `Title`;
 
   const encode = data => Object.keys(data).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&");
@@ -108,6 +142,14 @@ const Index = ({ data, location }) => {
 
     e.preventDefault();
   };
+
+  const handleOnPortfolioSelect = (index) => {
+    setPortfolioItem(index);
+  }
+
+  const handleOnRiskSelect = (index) => {
+    setRiskTolerance(index);
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -160,63 +202,27 @@ const Index = ({ data, location }) => {
               <li>The user may define which Portfolio Option they would like to adhere to and track it over time on the platform.</li>
               <li>The ÆCV network's investment service provides clients, members and partners with portfolio management solutions; an education/tuition fund; and a retirement fund.</li>
             </ul>
-            <h3>Portfolio Options:</h3>
             <Container fluid>
               <Row>
-              <Tab.Container id="left-tabs-example" defaultActiveKey={investmentProducts[0].id}>
-                <Row>
-                  <Col sm={12} md={3}>
-                    <Nav variant="pills" className="flex-column">
-                    {investmentProducts.map((elm, index) => (
-                      <Nav.Item key={index}>
-                        <Nav.Link eventKey={elm.id}>{elm.title}</Nav.Link>
-                      </Nav.Item>
-                      ))}
-                    </Nav>
-                  </Col>
-                  <Col sm={12} md={9}>
-                    <Tab.Content>
-                      {investmentProducts.map((elm, index) => (
-                        <Tab.Pane key={index} eventKey={elm.id}>
-                          <Card className="portfolioCard">
-                            <Card.Body>
-                              <Card.Title>{elm.title}</Card.Title>
-                              <Card.Text>{elm.description}</Card.Text>
-                                <Table striped bordered hover>
-                                  <thead>
-                                    <tr>
-                                      <th>#</th>
-                                      <th>%</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>Low-Yield Stable Fund</td>
-                                      <td>{elm.fundProps.LowYieldStable}</td>
-                                    </tr>
-                                    <tr>
-                                      <td>High-Yield High-Risk Fund</td>
-                                      <td>{elm.fundProps.HighYieldHighRisk}</td>
-                                    </tr>
-                                    <tr>
-                                      <td>Real Estate-Hard Asset Fund</td>
-                                      <td>{elm.fundProps.RealEstateRealAsset}</td>
-                                    </tr>
-                                    <tr>
-                                      <td>Entrepreneur/Startup Fund</td>
-                                      <td>{elm.fundProps.EntrepreneurInvestment}</td>
-                                    </tr>
-                                  </tbody>
-                                </Table>
-                                <blockquote className="blockquote mb-0">{elm.paymentInfo}</blockquote>
-                              </Card.Body>
-                            </Card>
-                        </Tab.Pane>
-                      ))}
-                    </Tab.Content>
-                  </Col>
-                </Row>
-              </Tab.Container>
+                <Container>
+                  <Row>
+                    <Col sm={12} md={3} className="portfolioSelectionMenu">
+                      <Nav variant="pills" className="flex-column" defaultActiveKey={0}>
+                        <header>Portfolio Options</header>
+                        {investmentProducts.map((elm, index) => <Nav.Link key={index} eventKey={index} onClick={() => handleOnPortfolioSelect(index)}>{elm.title}</Nav.Link>)}
+                      </Nav>
+                    </Col>
+                    <Col sm={12} md={2} className="portfolioSelectionMenu">
+                      <Nav variant="pills" className="flex-column" defaultActiveKey={0}>
+                        <header>Risk Tolerance</header>
+                        {Object.keys(investmentProducts[PortfolioIndex].riskTolerance).map((risk, index) => (<Nav.Link key={index} eventKey={index} onClick={() => handleOnRiskSelect(index)}>{risk}</Nav.Link>))}
+                      </Nav>
+                    </Col>
+                    <Col sm={12} md={7}>
+                      <RiskToleranceCard investmentProducts={investmentProducts} PortfolioIndex={PortfolioIndex} riskToleranceIndex={riskToleranceIndex} />
+                    </Col>
+                  </Row>
+                </Container>
               </Row>
             </Container>
             <Container fluid>
@@ -228,8 +234,13 @@ const Index = ({ data, location }) => {
                     <label>Last Name: <input type="text" name="lastName" /></label>
                     <label>Email: <input type="email" name="email" /></label>
                     <label>Portfolio Option: 
-                      <select name="Portfolio[]" multiple>
-                        {investmentProducts.map((elm, index) => <option key={index} value={elm.id}>{elm.title}</option>)}
+                      <select name="Portfolio[]">
+                        {investmentProducts.map((elm, index) => <option key={index} value={elm.title}>{elm.title}</option>)}
+                      </select>
+                    </label>
+                    <label>Risk Tolerance Option: 
+                      <select name="RiskTolerance[]">
+                        {Object.keys(investmentProducts[0].riskTolerance).map((elm, index) => <option key={index} value={elm}>{elm}</option>)}
                       </select>
                     </label>
                     <Button variant="primary"  type="submit">Send Portfolio Request</Button>

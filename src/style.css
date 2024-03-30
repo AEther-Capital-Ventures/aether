@@ -145,3 +145,27 @@ form button {
 .socialMediaButtons > a:hover {
   color: rgb(20, 225, 240);
 }
+
+.portfolioSelectionMenu .nav {
+  border: 1px solid lightslategray;
+  padding: 0!important;
+  margin-bottom: 3px;
+  margin-right: 1px;
+}
+
+.portfolioSelectionMenu a {
+  border-radius: 0!important;
+  border-top: 1px solid lightslategrey;
+}
+
+.portfolioSelectionMenu a:first {
+  border-top: 0;
+}
+
+.portfolioSelectionMenu header {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 500;
+  background: lightslategray;
+  color: white;
+}
