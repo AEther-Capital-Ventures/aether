@@ -32,7 +32,7 @@ const investmentProducts = [
         RealEstateRealAsset: "Dynamic",
         EntrepreneurInvestment: "Dynamic"
       },
-      modeerateHigh: {
+      moderateHigh: {
         LowYieldStable: "Dynamic",
         HighYieldHighRisk: "Dynamic",
         RealEstateRealAsset: "Dynamic",
@@ -70,7 +70,7 @@ const investmentProducts = [
         RealEstateRealAsset: "Dynamic",
         EntrepreneurInvestment: "Dynamic"
       },
-      modeerateHigh: {
+      moderateHigh: {
         LowYieldStable: "Dynamic",
         HighYieldHighRisk: "Dynamic",
         RealEstateRealAsset: "Dynamic",
@@ -108,7 +108,7 @@ const investmentProducts = [
         RealEstateRealAsset: "Dynamic",
         EntrepreneurInvestment: "Dynamic"
       },
-      modeerateHigh: {
+      moderateHigh: {
         LowYieldStable: "Dynamic",
         HighYieldHighRisk: "Dynamic",
         RealEstateRealAsset: "Dynamic",
@@ -150,6 +150,8 @@ const Index = ({ data, location }) => {
   const handleOnRiskSelect = (index) => {
     setRiskTolerance(index);
   }
+
+  const keyStringFormater = (str) => str.replace(/(?<!^)([A-Z])/g, " $1").charAt(0).toUpperCase() + str.replace(/(?<!^)([A-Z])/g, " $1").slice(1);
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -215,7 +217,7 @@ const Index = ({ data, location }) => {
                     <Col sm={12} md={2} className="portfolioSelectionMenu">
                       <Nav variant="pills" className="flex-column" defaultActiveKey={0}>
                         <header>Risk Tolerance</header>
-                        {Object.keys(investmentProducts[PortfolioIndex].riskTolerance).map((risk, index) => (<Nav.Link key={index} eventKey={index} onClick={() => handleOnRiskSelect(index)}>{risk}</Nav.Link>))}
+                        {Object.keys(investmentProducts[PortfolioIndex].riskTolerance).map((risk, index) => (<Nav.Link key={index} eventKey={index} onClick={() => handleOnRiskSelect(index)}>{keyStringFormater(risk)}</Nav.Link>))}
                       </Nav>
                     </Col>
                     <Col sm={12} md={7}>
@@ -240,7 +242,7 @@ const Index = ({ data, location }) => {
                     </label>
                     <label>Risk Tolerance Option: 
                       <select name="RiskTolerance[]">
-                        {Object.keys(investmentProducts[0].riskTolerance).map((elm, index) => <option key={index} value={elm}>{elm}</option>)}
+                        {Object.keys(investmentProducts[0].riskTolerance).map((elm, index) => <option key={index} value={keyStringFormater(elm)}>{keyStringFormater(elm)}</option>)}
                       </select>
                     </label>
                     <Button variant="primary"  type="submit">Send Portfolio Request</Button>

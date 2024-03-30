@@ -6,10 +6,11 @@ const RiskToleranceCard = ({ investmentProducts, PortfolioIndex, riskToleranceIn
     const portfolio = investmentProducts[PortfolioIndex];
     const riskToleranceKey = Object.keys(portfolio.riskTolerance)[riskToleranceIndex];
     const riskData = portfolio.riskTolerance[riskToleranceKey];
+    const labelRisk = riskToleranceKey.replace(/(?<!^)([A-Z])/g, " $1").charAt(0).toUpperCase() + riskToleranceKey.replace(/(?<!^)([A-Z])/g, " $1").slice(1);
     return (
       <Card className="portfolioCard">
         <Card.Body>
-          <Card.Title>{portfolio.title}</Card.Title>
+          <Card.Title>{portfolio.title} - {labelRisk} Risk Tolerance</Card.Title>
           <Card.Text>{portfolio.description}</Card.Text>
           <Table striped bordered hover>
             <thead>
