@@ -11,11 +11,12 @@ const investmentProducts = [
   {
     id: "invest",
     title: "Growth Investment",
-    description: "Funds are locked for first 2 years of account with a zero widthdraw balance. Funds can be widthdrawn up to the total amount of the widthdraw balance. Widthdraw balance can be viewed in your accont dahsboard. Full account liqudation is distributed in monthly payments over 24 months.",
+    description: "Funds are locked for first 2 years of account with a zero widthdraw balance. Funds can be widthdrawn up to the total amount of the widthdraw balance. Widthdraw balance can be viewed in your accont dahsboard.",
     paymentInfo: "Minimum starting investment: $20",
     riskTolerance: {
       low: {
         LiquidityTolerance: "widthdraw balance 30% over 70%",
+        liquidationPeriod: "24 months",
         LowYieldStable: "80%",
         HighYieldHighRisk: "0%",
         RealEstateRealAsset: "20%",
@@ -23,6 +24,7 @@ const investmentProducts = [
       },
       moderateLow: {
         LiquidityTolerance: "widthdraw balance 25% over 75%",
+        liquidationPeriod: "24 months",
         LowYieldStable: "65%",
         HighYieldHighRisk: "10%",
         RealEstateRealAsset: "20%",
@@ -30,6 +32,7 @@ const investmentProducts = [
       },
       moderate: {
         LiquidityTolerance: "widthdraw balance 20% over 80%",
+        liquidationPeriod: "36 months",
         LowYieldStable: "50%",
         HighYieldHighRisk: "20%",
         RealEstateRealAsset: "15%",
@@ -37,6 +40,7 @@ const investmentProducts = [
       },
       moderateHigh: {
         LiquidityTolerance: "widthdraw balance 10% over 90%",
+        liquidationPeriod: "36 months",
         LowYieldStable: "35%",
         HighYieldHighRisk: "45%",
         RealEstateRealAsset: "10%",
@@ -44,6 +48,7 @@ const investmentProducts = [
       },
       High: {
         LiquidityTolerance: "widthdraw balance 5% over 95%",
+        liquidationPeriod: "60 months",
         LowYieldStable: "20%",
         HighYieldHighRisk: "60%",
         RealEstateRealAsset: "5%",
@@ -54,11 +59,12 @@ const investmentProducts = [
   {
     id: "tuition",
     title: "Education/Tuition Fund",
-    description: "Funds are released to assigned person at age 18 years old. Payout is in monthly payments.",
+    description: "Funds are released to assigned person at age 18 years old. Payout is in monthly payments. Distrabutions are calculated base on average studen education requirements.",
     paymentInfo: "Minimum starting investment: $150",
     riskTolerance: {
       moderateLow: {
         LiquidityTolerance: "Monthly Payment at age 18",
+        liquidationPeriod: "60 Months after age requirement",
         LowYieldStable: "65%",
         HighYieldHighRisk: "10%",
         RealEstateRealAsset: "20%",
@@ -69,11 +75,12 @@ const investmentProducts = [
   {
     id: "retirement",
     title: "Retirement fund",
-    description: "Funds are released to assigned person at age 65 years old. Payout is in monthly payments.",
+    description: "Funds are released to assigned person at age 65 years old. Payout is in monthly payments. Distrabutions are calculated base on average human lifespan.",
     paymentInfo: "Minimum starting investment: $200",
     riskTolerance: {
       moderateLow: {
         LiquidityTolerance: "Monthly Payment at age 65",
+        liquidationPeriod: "60 Months after age requirement",
         LowYieldStable: "65%",
         HighYieldHighRisk: "10%",
         RealEstateRealAsset: "20%",
@@ -161,6 +168,7 @@ const Index = ({ data, location }) => {
               <li>The user may define which Portfolio Option they would like to adhere to and track it over time on the platform.</li>
               <li>The ÆCV network's investment service provides clients, members and partners with portfolio management solutions; an education/tuition fund; and a retirement fund.</li>
             </ul>
+            <p className="subscript">If the client files a full account liqudation request, payout is distributed in monthly payments. See corresponding portfolio table in section "Full Account Liquidation". The full balance of the account will be equally distributed into the number of monthly payments and distributed on the first of each month. Once an account is put into Full Liquidation mode no further interest distributions will be applied to the portfolio. Early release of funds will encure a penalty fee calculated based on the portfolio, its risk tolerance and how long the account has been active. If liquidation is during a state where the account is in an early lock fees will be larger.</p>
             <Container fluid>
               <Row>
                 <Container>

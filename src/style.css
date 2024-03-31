@@ -176,3 +176,7 @@ form button {
   background: lightslategray;
   color: white;
 }
+
+.subscript {
+  font-size: 0.70em;
+}
