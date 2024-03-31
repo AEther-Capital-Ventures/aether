@@ -21,6 +21,10 @@ const RiskToleranceCard = ({ investmentProducts, PortfolioIndex, riskToleranceIn
             </thead>
             <tbody>
               <tr>
+                <td>Liquidity Tolerance</td>
+                <td>{riskData.LiquidityTolerance}</td>
+              </tr>
+              <tr>
                 <td>Low-Yield Stable Fund</td>
                 <td>{riskData.LowYieldStable}</td>
               </tr>

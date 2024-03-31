@@ -15,30 +15,35 @@ const investmentProducts = [
     paymentInfo: "Minimum starting investment: $20",
     riskTolerance: {
       low: {
+        LiquidityTolerance: "30% / 70%",
         LowYieldStable: "80%",
         HighYieldHighRisk: "0%",
         RealEstateRealAsset: "20%",
         EntrepreneurInvestment: "0%"
       },
       moderateLow: {
+        LiquidityTolerance: "25% / 75%",
         LowYieldStable: "65%",
         HighYieldHighRisk: "10%",
         RealEstateRealAsset: "20%",
         EntrepreneurInvestment: "5%"
       },
       moderate: {
+        LiquidityTolerance: "20% / 80%",
         LowYieldStable: "50%",
         HighYieldHighRisk: "20%",
         RealEstateRealAsset: "15%",
         EntrepreneurInvestment: "10%"
       },
       moderateHigh: {
+        LiquidityTolerance: "10% / 90%",
         LowYieldStable: "35%",
         HighYieldHighRisk: "45%",
         RealEstateRealAsset: "10%",
         EntrepreneurInvestment: "15%"
       },
       High: {
+        LiquidityTolerance: "5% / 95%",
         LowYieldStable: "20%",
         HighYieldHighRisk: "60%",
         RealEstateRealAsset: "5%",
@@ -53,6 +58,7 @@ const investmentProducts = [
     paymentInfo: "Minimum starting investment: $150",
     riskTolerance: {
       moderateLow: {
+        LiquidityTolerance: "25% / 75%",
         LowYieldStable: "65%",
         HighYieldHighRisk: "10%",
         RealEstateRealAsset: "20%",
@@ -67,6 +73,7 @@ const investmentProducts = [
     paymentInfo: "Minimum starting investment: $200",
     riskTolerance: {
       moderateLow: {
+        LiquidityTolerance: "25% / 75%",
         LowYieldStable: "65%",
         HighYieldHighRisk: "10%",
         RealEstateRealAsset: "20%",
