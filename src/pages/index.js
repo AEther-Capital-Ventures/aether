@@ -15,35 +15,35 @@ const investmentProducts = [
     paymentInfo: "Minimum starting investment: $20",
     riskTolerance: {
       low: {
-        LiquidityTolerance: "30% / 70%",
+        LiquidityTolerance: "widthdraw balance 30% over 70%",
         LowYieldStable: "80%",
         HighYieldHighRisk: "0%",
         RealEstateRealAsset: "20%",
         EntrepreneurInvestment: "0%"
       },
       moderateLow: {
-        LiquidityTolerance: "25% / 75%",
+        LiquidityTolerance: "widthdraw balance 25% over 75%",
         LowYieldStable: "65%",
         HighYieldHighRisk: "10%",
         RealEstateRealAsset: "20%",
         EntrepreneurInvestment: "5%"
       },
       moderate: {
-        LiquidityTolerance: "20% / 80%",
+        LiquidityTolerance: "widthdraw balance 20% over 80%",
         LowYieldStable: "50%",
         HighYieldHighRisk: "20%",
         RealEstateRealAsset: "15%",
         EntrepreneurInvestment: "10%"
       },
       moderateHigh: {
-        LiquidityTolerance: "10% / 90%",
+        LiquidityTolerance: "widthdraw balance 10% over 90%",
         LowYieldStable: "35%",
         HighYieldHighRisk: "45%",
         RealEstateRealAsset: "10%",
         EntrepreneurInvestment: "15%"
       },
       High: {
-        LiquidityTolerance: "5% / 95%",
+        LiquidityTolerance: "widthdraw balance 5% over 95%",
         LowYieldStable: "20%",
         HighYieldHighRisk: "60%",
         RealEstateRealAsset: "5%",
@@ -58,7 +58,7 @@ const investmentProducts = [
     paymentInfo: "Minimum starting investment: $150",
     riskTolerance: {
       moderateLow: {
-        LiquidityTolerance: "0% / 100%",
+        LiquidityTolerance: "Monthly Payment at age 18",
         LowYieldStable: "65%",
         HighYieldHighRisk: "10%",
         RealEstateRealAsset: "20%",
@@ -73,7 +73,7 @@ const investmentProducts = [
     paymentInfo: "Minimum starting investment: $200",
     riskTolerance: {
       moderateLow: {
-        LiquidityTolerance: "0% / 100%",
+        LiquidityTolerance: "Monthly Payment at age 65",
         LowYieldStable: "65%",
         HighYieldHighRisk: "10%",
         RealEstateRealAsset: "20%",
