@@ -136,15 +136,13 @@ const Index = ({ data, location }) => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ ...this.state })
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
-
+    }).then(() => alert("Success!")).catch(error => alert(error));
     e.preventDefault();
   };
 
   const handleOnPortfolioSelect = (index) => {
     setPortfolioItem(index);
+    setRiskTolerance(0);
   }
 
   const handleOnRiskSelect = (index) => {
@@ -215,7 +213,7 @@ const Index = ({ data, location }) => {
                       </Nav>
                     </Col>
                     <Col sm={12} md={2} className="portfolioSelectionMenu">
-                      <Nav variant="pills" className="flex-column" defaultActiveKey={0}>
+                      <Nav variant="pills" className="flex-column" defaultActiveKey={0} activeKey={riskToleranceIndex}>
                         <header>Risk Tolerance</header>
                         {Object.keys(investmentProducts[PortfolioIndex].riskTolerance).map((risk, index) => (<Nav.Link key={index} eventKey={index} onClick={() => handleOnRiskSelect(index)}>{keyStringFormater(risk)}</Nav.Link>))}
                       </Nav>
@@ -235,16 +233,8 @@ const Index = ({ data, location }) => {
                     <label>First Name: <input type="text" name="firstName" /></label>
                     <label>Last Name: <input type="text" name="lastName" /></label>
                     <label>Email: <input type="email" name="email" /></label>
-                    <label>Portfolio Option: 
-                      <select name="Portfolio[]">
-                        {investmentProducts.map((elm, index) => <option key={index} value={elm.title}>{elm.title}</option>)}
-                      </select>
-                    </label>
-                    <label>Risk Tolerance Option: 
-                      <select name="RiskTolerance[]">
-                        {Object.keys(investmentProducts[0].riskTolerance).map((elm, index) => <option key={index} value={keyStringFormater(elm)}>{keyStringFormater(elm)}</option>)}
-                      </select>
-                    </label>
+                    <label>Portfolio Option: <input type="text" name="Portfolio" value={investmentProducts[PortfolioIndex].title} disabled/></label>
+                    <label>Risk Tolerance Option: <input type="text" name="RiskTolerance" value={keyStringFormater(Object.keys(investmentProducts[PortfolioIndex].riskTolerance)[riskToleranceIndex])} disabled/></label>
                     <Button variant="primary"  type="submit">Send Portfolio Request</Button>
                   </form>
                 </Col>
