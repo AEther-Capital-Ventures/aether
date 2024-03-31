@@ -52,31 +52,7 @@ const investmentProducts = [
     description: "",
     paymentInfo: "Dynamic. No minimum.",
     riskTolerance: {
-      low: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
-      },
       moderateLow: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
-      },
-      moderate: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
-      },
-      moderateHigh: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
-      },
-      High: {
         LowYieldStable: "Dynamic",
         HighYieldHighRisk: "Dynamic",
         RealEstateRealAsset: "Dynamic",
@@ -90,31 +66,7 @@ const investmentProducts = [
     description: "",
     paymentInfo: "Dynamic. No minimum.",
     riskTolerance: {
-      low: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
-      },
       moderateLow: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
-      },
-      moderate: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
-      },
-      moderateHigh: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
-      },
-      High: {
         LowYieldStable: "Dynamic",
         HighYieldHighRisk: "Dynamic",
         RealEstateRealAsset: "Dynamic",
