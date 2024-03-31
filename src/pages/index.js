@@ -11,7 +11,7 @@ const investmentProducts = [
   {
     id: "invest",
     title: "Growth Investment",
-    description: "Funds are locked for first 2 years of account with a zero widthdraw balance. Funds can be widthdrawn up to the total amount of the widthdraw balance. Widthdraw balance can be viewed in your accont dahsboard.",
+    description: "Funds are locked for first 2 years of account with a zero widthdraw balance. Funds can be widthdrawn up to the total amount of the widthdraw balance. Widthdraw balance can be viewed in your accont dahsboard. Full account liqudation is distributed in monthly payments over 24 months.",
     paymentInfo: "Minimum starting investment: $20",
     riskTolerance: {
       low: {
