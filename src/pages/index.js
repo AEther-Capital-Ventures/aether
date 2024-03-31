@@ -53,10 +53,10 @@ const investmentProducts = [
     paymentInfo: "Dynamic. No minimum.",
     riskTolerance: {
       moderateLow: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
+        LowYieldStable: "65%",
+        HighYieldHighRisk: "10%",
+        RealEstateRealAsset: "20%",
+        EntrepreneurInvestment: "5%"
       }
     }
   },
@@ -67,10 +67,10 @@ const investmentProducts = [
     paymentInfo: "Dynamic. No minimum.",
     riskTolerance: {
       moderateLow: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
+        LowYieldStable: "65%",
+        HighYieldHighRisk: "10%",
+        RealEstateRealAsset: "20%",
+        EntrepreneurInvestment: "5%"
       }
     }
   },
