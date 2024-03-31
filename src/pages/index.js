@@ -11,8 +11,8 @@ const investmentProducts = [
   {
     id: "invest",
     title: "Growth Investment",
-    description: "",
-    paymentInfo: "Minimum investment: $20",
+    description: "Funds are locked for first 2 years of account with a zero widthdraw balance. Funds can be widthdrawn up to the total amount of the widthdraw balance. Widthdraw balance can be viewed in your accont dahsboard.",
+    paymentInfo: "Minimum starting investment: $20",
     riskTolerance: {
       low: {
         LowYieldStable: "80%",
@@ -49,8 +49,8 @@ const investmentProducts = [
   {
     id: "tuition",
     title: "Education/Tuition Fund",
-    description: "",
-    paymentInfo: "Dynamic. No minimum.",
+    description: "Funds are released to assigned person at age 18 years old. Payout is in monthly payments.",
+    paymentInfo: "Minimum starting investment: $150",
     riskTolerance: {
       moderateLow: {
         LowYieldStable: "65%",
@@ -63,8 +63,8 @@ const investmentProducts = [
   {
     id: "retirement",
     title: "Retirement fund",
-    description: "",
-    paymentInfo: "Dynamic. No minimum.",
+    description: "Funds are released to assigned person at age 65 years old. Payout is in monthly payments.",
+    paymentInfo: "Minimum starting investment: $200",
     riskTolerance: {
       moderateLow: {
         LowYieldStable: "65%",
