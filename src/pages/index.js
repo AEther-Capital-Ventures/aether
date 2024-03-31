@@ -187,6 +187,7 @@ const Index = ({ data, location }) => {
                     <label>Email: <input type="email" name="email" /></label>
                     <label>Portfolio Option: <input type="text" name="Portfolio" value={investmentProducts[PortfolioIndex].title} disabled/></label>
                     <label>Risk Tolerance Option: <input type="text" name="RiskTolerance" value={keyStringFormater(Object.keys(investmentProducts[PortfolioIndex].riskTolerance)[riskToleranceIndex])} disabled/></label>
+                    <label>Monthly Payment amount: <input type="number" name="autoPayAmount" /></label>
                     <Button variant="primary"  type="submit">Send Portfolio Request</Button>
                   </form>
                 </Col>
