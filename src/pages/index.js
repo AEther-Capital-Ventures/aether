@@ -12,37 +12,37 @@ const investmentProducts = [
     id: "invest",
     title: "Growth Investment",
     description: "",
-    paymentInfo: "Min balance $20",
+    paymentInfo: "Minimum investment: $20",
     riskTolerance: {
       low: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
+        LowYieldStable: "80%",
+        HighYieldHighRisk: "0%",
+        RealEstateRealAsset: "20%",
+        EntrepreneurInvestment: "0%"
       },
       moderateLow: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
+        LowYieldStable: "65%",
+        HighYieldHighRisk: "10%",
+        RealEstateRealAsset: "20%",
+        EntrepreneurInvestment: "5%"
       },
       moderate: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
+        LowYieldStable: "50%",
+        HighYieldHighRisk: "20%",
+        RealEstateRealAsset: "15%",
+        EntrepreneurInvestment: "10%"
       },
       moderateHigh: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
+        LowYieldStable: "35%",
+        HighYieldHighRisk: "45%",
+        RealEstateRealAsset: "10%",
+        EntrepreneurInvestment: "15%"
       },
       High: {
-        LowYieldStable: "Dynamic",
-        HighYieldHighRisk: "Dynamic",
-        RealEstateRealAsset: "Dynamic",
-        EntrepreneurInvestment: "Dynamic"
+        LowYieldStable: "20%",
+        HighYieldHighRisk: "60%",
+        RealEstateRealAsset: "5%",
+        EntrepreneurInvestment: "15%"
       }
     }
   },
