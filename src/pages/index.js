@@ -58,7 +58,7 @@ const investmentProducts = [
     paymentInfo: "Minimum starting investment: $150",
     riskTolerance: {
       moderateLow: {
-        LiquidityTolerance: "25% / 75%",
+        LiquidityTolerance: "0% / 100%",
         LowYieldStable: "65%",
         HighYieldHighRisk: "10%",
         RealEstateRealAsset: "20%",
@@ -73,7 +73,7 @@ const investmentProducts = [
     paymentInfo: "Minimum starting investment: $200",
     riskTolerance: {
       moderateLow: {
-        LiquidityTolerance: "25% / 75%",
+        LiquidityTolerance: "0% / 100%",
         LowYieldStable: "65%",
         HighYieldHighRisk: "10%",
         RealEstateRealAsset: "20%",
