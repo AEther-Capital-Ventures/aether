@@ -11,11 +11,11 @@ const investmentProducts = [
   {
     id: "invest",
     title: "Growth Investment",
-    description: "Funds are locked for first 2 years of account with a zero widthdraw balance. Funds can be widthdrawn up to the total amount of the widthdraw balance. Widthdraw balance can be viewed in your accont dahsboard.",
+    description: "Funds are locked for first 2 years of account with a zero withdraw balance. Funds can be withdrawn up to the total amount of the withdraw balance. Widthdraw balance can be viewed in your account dashboard.",
     paymentInfo: "Minimum starting investment: $20",
     riskTolerance: {
       low: {
-        LiquidityTolerance: "widthdraw balance 30% over 70%",
+        LiquidityTolerance: "widthdraw balance 30% of 70%",
         liquidationPeriod: "24 months",
         LowYieldStable: "80%",
         HighYieldHighRisk: "0%",
@@ -75,7 +75,7 @@ const investmentProducts = [
   {
     id: "retirement",
     title: "Retirement fund",
-    description: "Funds are released to assigned person at age 65 years old. Payout is in monthly payments. Distrabutions are calculated base on average human lifespan.",
+    description: "Funds are released to assigned person at age 65 years old. Payout is in monthly payments. Distributions are calculated base on average human lifespan.",
     paymentInfo: "Minimum starting investment: $200",
     riskTolerance: {
       moderateLow: {
