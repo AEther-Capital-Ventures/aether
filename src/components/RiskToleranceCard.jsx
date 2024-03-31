@@ -20,10 +20,10 @@ const RiskToleranceCard = ({ investmentProducts, PortfolioIndex, riskToleranceIn
               </tr>
             </thead>
             <tbody>
-              <tr>
+              {/*<tr>
                 <td>Liquidity Tolerance</td>
                 <td>{riskData.LiquidityTolerance}</td>
-              </tr>
+              </tr>*/}
               <tr>
                 <td>Full Account Liquidation</td>
                 <td>{riskData.liquidationPeriod}</td>
