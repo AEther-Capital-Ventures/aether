@@ -157,7 +157,7 @@ const Index = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <section id="about"> 
         <h1>About Us</h1> 
-          <p>Æther Capital Ventures (ÆCV) is a pioneering financial hub hosted by a team of analysts, investors, traders, and world-class IT &amp; Real Estate professionals, bringing prime realty holdings, traditional investment vehicles, and blockchain technology together for an optimal membership-based investing experience. Our mission is to provide financial opportunities to investors and partners that would otherwise be elusive in the midst of an ever-evolving technological & financial environment. Our business network is meant to serve its clients and members by making the collective expertise and technical knowledge of its Founding Team and Partners accessible to all.</p>
+          <p>Æther Capital Ventures (ÆCV) is a pioneering financial hub hosted by a team of analysts, investors, traders, and world-class IT &amp; Real Estate professionals, bringing prime realty holdings, traditional investment vehicles, and blockchain technology together for an optimal membership-based investing experience. Our mission is to provide financial opportunities to investors and partners that would otherwise be elusive in the midst of ever-evolving technological & financial environments. Our business network is meant to serve its clients and members by making the collective expertise and technical knowledge of its Founding Team and Partners available to all.</p>
       </section> 
       <section id="services">
         <h1>Our services</h1> 
