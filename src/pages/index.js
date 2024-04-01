@@ -121,7 +121,7 @@ const Index = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <section id="about"> 
         <h1>About Us</h1> 
-          <p>Æther Capital Ventures (ÆCV) is a pioneering financial hub hosted by a team of analysts, investors, traders, and world-class IT &amp; Real Estate professionals, bringing prime realty holdings, traditional investment vehicles, and blockchain technology together for an optimal membership-based investing experience. Our mission is to provide financial opportunities to investors and partners that would otherwise be elusive in the midst of ever-evolving technological & financial environments. Our business network is meant to serve its clients and members by making the collective expertise and technical knowledge of its Founding Team and Partners available to all.</p>
+          <p>Æther Capital Ventures (ÆCV) is a pioneering financial hub hosted by a team of analysts, investors, traders, and world-class IT &amp; Real Estate professionals, bringing prime realty holdings, traditional investment vehicles, and blockchain technology together for an optimal membership-based investing experience. Our mission is to provide financial opportunities to investors and partners that would otherwise be elusive in the midst of ever-evolving technological & financial environments. Our business network is meant to serve its clients and members by making the collective expertise and technical knowledge of its Founding Team and Partners more accessible.</p>
       </section> 
       <section id="services">
         <h1>Our services</h1> 
@@ -164,11 +164,11 @@ const Index = ({ data, location }) => {
             </ul>
             <p><b>Subscribe today for Exclusive Access!</b></p>
             <ul>
-              <li>ÆCV innovates with optimization capabilities that make Real Estate asset management considerably more efficient by leveraging the security, speed, transparency and availability of blockchain technology in order to make the most out of valuable Real Estate market opportunities through specialized strategic analysis and cutting-edge technological implementations.</li>
+              <li>ÆCV innovates with optimization capabilities that make Real Estate asset management considerably more efficient by leveraging the security, speed, transparency and data availability of blockchain technology in order to make the most out of valuable Real Estate market opportunities through specialized strategic analysis and cutting-edge technological implementations.</li>
               <li>The user may define which Portfolio Option they would like to adhere to and track it over time on the platform.</li>
-              <li>The ÆCV network's investment service provides clients, members and partners with portfolio management solutions; an education/tuition fund; and a retirement fund.</li>
+              <li>The ÆCV network's investment service provides clients, members and partners with an education/tuition fund; a retirement fund; and portfolio management solutions</li>
             </ul>
-            <p className="subscript">If the client files a full account liqudation request, payout is distributed in monthly payments. See corresponding portfolio table in section "Full Account Liquidation". The full balance of the account will be equally distributed into the number of monthly payments and distributed on the first of each month. Once an account is put into Full Liquidation mode no further interest distributions will be applied to the portfolio. Early release of funds will encure a penalty fee calculated based on the portfolio, its risk tolerance and how long the account has been active. If liquidation is during a state where the account is in an early lock fees will be larger.</p>
+            <p className="subscript">If the client files a full account liqudation request, payout is distributed in monthly payments. See corresponding portfolio table in section "Full Account Liquidation". The full balance of the account will be equally distributed into the number of monthly payments and distributed on the first of each month. Once an account is put into Full Liquidation mode no further interest distributions will be applied to the portfolio. Early release of funds will encure a penalty fee calculated based on the portfolio, its risk tolerance and how long the account has been active. If liquidation is during a state where the account is in an early lock, fees will be larger.</p>
             <Container fluid>
               <Row>
                 <Container>
