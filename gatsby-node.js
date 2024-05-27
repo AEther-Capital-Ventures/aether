@@ -6,6 +6,8 @@
 
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const USER_ACCOUNTS = require('./static/data/userAccounts.json');
+const INVESTMENT_PRODUCTS = require('./static/data/investmentProducts.json');
 
 // Define the template for blog post
 const blogPost = path.resolve(`./src/templates/blog-post.js`)
@@ -123,3 +125,32 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
   `)
 }
+
+exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) => {
+  USER_ACCOUNTS.forEach((data, index) => {  
+    const { firstName, lastName, phoneNumber, emailAddress, walletAddress, account } = data;
+    createNode({
+      id: `account-${index}`,
+      firstName,
+      lastName,
+      phoneNumber,
+      emailAddress,
+      walletAddress,
+      account: {...account},
+      internal: {
+        type: 'account',
+        contentDigest: createContentDigest(account)
+      }
+    });
+  });
+  INVESTMENT_PRODUCTS.forEach((data, index) => {
+    createNode({
+      id: `investment_product-${index}`,
+      ...data,
+      internal: {
+        type: 'investmentProduct',
+        contentDigest: createContentDigest(data)
+      }
+    });
+  });
+};

@@ -1,0 +1,98 @@
+[
+    {
+      "id": "invest",
+      "title": "Growth Investment",
+      "description": "Funds are locked for first 2 years of account with a zero withdraw balance. Funds can be withdrawn up to the total amount of the withdraw balance. Widthdraw balance can be viewed in your account dashboard.",
+      "paymentInfo": "Minimum starting investment: $20",
+      "riskTolerance": {
+        "low": {
+          "LiquidityTolerance": "widthdraw balance 30% of 70%",
+          "liquidationPeriod": "24 months",
+          "LowYieldStable": "80%",
+          "HighYieldHighRisk": "0%",
+          "RealEstateRealAsset": "20%",
+          "EntrepreneurInvestment": "0%"
+        },
+        "moderateLow": {
+          "LiquidityTolerance": "widthdraw balance 25% over 75%",
+          "liquidationPeriod": "24 months",
+          "LowYieldStable": "65%",
+          "HighYieldHighRisk": "10%",
+          "RealEstateRealAsset": "20%",
+          "EntrepreneurInvestment": "5%"
+        },
+        "moderate": {
+          "LiquidityTolerance": "widthdraw balance 20% over 80%",
+          "liquidationPeriod": "36 months",
+          "LowYieldStable": "50%",
+          "HighYieldHighRisk": "20%",
+          "RealEstateRealAsset": "15%",
+          "EntrepreneurInvestment": "10%"
+        },
+        "moderateHigh": {
+          "LiquidityTolerance": "widthdraw balance 10% over 90%",
+          "liquidationPeriod": "36 months",
+          "LowYieldStable": "35%",
+          "HighYieldHighRisk": "45%",
+          "RealEstateRealAsset": "10%",
+          "EntrepreneurInvestment": "15%"
+        },
+        "High": {
+          "LiquidityTolerance": "widthdraw balance 5% over 95%",
+          "liquidationPeriod": "60 months",
+          "LowYieldStable": "20%",
+          "HighYieldHighRisk": "60%",
+          "RealEstateRealAsset": "5%",
+          "EntrepreneurInvestment": "15%"
+        }
+      }
+    },
+    {
+      "id": "tuition",
+      "title": "Education/Tuition Fund",
+      "description": "Funds are released to assigned person at age 18 years old. Payout is in monthly payments. Distrabutions are calculated base on average studen education requirements.",
+      "paymentInfo": "Minimum starting investment: $150",
+      "riskTolerance": {
+        "moderateLow": {
+          "LiquidityTolerance": "Monthly Payment at age 18",
+          "liquidationPeriod": "60 Months after age requirement",
+          "LowYieldStable": "65%",
+          "HighYieldHighRisk": "10%",
+          "RealEstateRealAsset": "20%",
+          "EntrepreneurInvestment": "5%"
+        }
+      }
+    },
+    {
+      "id": "retirement",
+      "title": "Retirement Fund",
+      "description": "Funds are released to assigned person at age 65 years old. Payout is in monthly payments. Distributions are calculated base on average human lifespan.",
+      "paymentInfo": "Minimum starting investment: $200",
+      "riskTolerance": {
+        "moderateLow": {
+          "LiquidityTolerance": "Monthly Payment at age 65",
+          "liquidationPeriod": "60 Months after age requirement",
+          "LowYieldStable": "65%",
+          "HighYieldHighRisk": "10%",
+          "RealEstateRealAsset": "20%",
+          "EntrepreneurInvestment": "5%"
+        }
+      }
+    },
+    {
+      "id": "cryptoincome",
+      "title": "Crypto Income Fund",
+      "description": "",
+      "paymentInfo": "Minimum starting investment: $100",
+      "riskTolerance": {
+        "base": {
+          "LiquidityTolerance": "Monthly Payment at age 65",
+          "liquidationPeriod": "60 Months after age requirement",
+          "LowYieldStable": "65%",
+          "HighYieldHighRisk": "10%",
+          "RealEstateRealAsset": "20%",
+          "EntrepreneurInvestment": "5%"
+        }
+      }
+    }
+  ]

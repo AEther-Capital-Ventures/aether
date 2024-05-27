@@ -1,8 +1,9 @@
-import * as React from "react";
-import { useState } from 'react';
-import { graphql } from "gatsby";
-import { Container, Row, Col, Tab, Tabs, Button, Nav } from 'react-bootstrap';
+import React, { useState, Fragment } from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { Container, Row, Col, Tab, Tabs, Button, Nav, Card, Table } from 'react-bootstrap';
 import RiskToleranceCard from "../components/RiskToleranceCard";
+import CryptoInvestCard from "../components/CryptoInvestCard copy";
+import ProfitCalcCard from "../components/ProitCalcCard";
 
 
 import Layout from "../components/layout";
@@ -74,7 +75,7 @@ const investmentProducts = [
   },
   {
     id: "retirement",
-    title: "Retirement fund",
+    title: "Retirement Fund",
     description: "Funds are released to assigned person at age 65 years old. Payout is in monthly payments. Distributions are calculated base on average human lifespan.",
     paymentInfo: "Minimum starting investment: $200",
     riskTolerance: {
@@ -88,14 +89,60 @@ const investmentProducts = [
       }
     }
   },
+  {
+    id: "cryptoincome",
+    title: "Crypto Income Fund",
+    description: "",
+    paymentInfo: "Minimum starting investment: $100",
+    riskTolerance: {
+      base: {
+        LiquidityTolerance: "Monthly Payment at age 65",
+        liquidationPeriod: "60 Months after age requirement",
+        LowYieldStable: "65%",
+        HighYieldHighRisk: "10%",
+        RealEstateRealAsset: "20%",
+        EntrepreneurInvestment: "5%"
+      }
+    }
+  }
 ];
 
 
 const Index = ({ data, location }) => {
+  const { site, allAccount } = useStaticQuery(graphql `
+      query MyQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+        allAccount {
+          nodes {
+            account {
+              activeBalance
+              createDate
+              inboundBalance
+              outboundBalance
+            }
+            firstName
+            lastName
+            phoneNumber
+            emailAddress
+            walletAddress
+          }
+        }
+      }
+    `);
+
+  const [accountState, setAccountState] = useState({ formWalletAddress:null, data: null });
   const [PortfolioIndex, setPortfolioItem] = useState(0);
   const [riskToleranceIndex, setRiskTolerance] = useState(0);
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
+  //const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const siteTitle = site.siteMetadata?.title || `Title`;
 
+  const numFormatter = (num) => {
+    return (num.toFixed(2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   const encode = data => Object.keys(data).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&");
   const handleSubmit = e => {
     fetch("/", {
@@ -116,6 +163,20 @@ const Index = ({ data, location }) => {
   }
 
   const keyStringFormater = (str) => str.replace(/(?<!^)([A-Z])/g, " $1").charAt(0).toUpperCase() + str.replace(/(?<!^)([A-Z])/g, " $1").slice(1);
+
+  const getAccountData = () => {
+    const accountIndex = allAccount.nodes.findIndex(e => e.walletAddress === accountState.formWalletAddress);
+    console.log('test: ', allAccount.nodes);
+    if(accountIndex === -1) {
+      setAccountState({...accountState, data: false});
+    } else {
+      setAccountState({...accountState, data: allAccount.nodes[accountIndex]});
+    }
+  }
+
+  const handleAccountWalletChange = (e) => {
+    setAccountState({...accountState, formWalletAddress: e.target.value});
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -186,7 +247,11 @@ const Index = ({ data, location }) => {
                       </Nav>
                     </Col>
                     <Col sm={12} md={7}>
-                      <RiskToleranceCard investmentProducts={investmentProducts} PortfolioIndex={PortfolioIndex} riskToleranceIndex={riskToleranceIndex} />
+                      {investmentProducts[PortfolioIndex].id !== "cryptoincome" ? (
+                        <RiskToleranceCard investmentProducts={investmentProducts} PortfolioIndex={PortfolioIndex} riskToleranceIndex={riskToleranceIndex} />
+                      ) : (
+                        <CryptoInvestCard investmentProducts={investmentProducts} PortfolioIndex={PortfolioIndex} riskToleranceIndex={riskToleranceIndex} />
+                      )}
                     </Col>
                   </Row>
                 </Container>
@@ -200,14 +265,69 @@ const Index = ({ data, location }) => {
                     <label>First Name: <input type="text" name="firstName" /></label>
                     <label>Last Name: <input type="text" name="lastName" /></label>
                     <label>Email: <input type="email" name="email" /></label>
+                    <label>Phone: <input type="text" name="phone" /></label>
                     <label>Portfolio Option: <input type="text" name="Portfolio" value={investmentProducts[PortfolioIndex].title} disabled/></label>
                     <label>Risk Tolerance Option: <input type="text" name="RiskTolerance" value={keyStringFormater(Object.keys(investmentProducts[PortfolioIndex].riskTolerance)[riskToleranceIndex])} disabled/></label>
+                    <label>MetaMask Wallet: <input type="text" name="RiskTolerance" disabled={investmentProducts[PortfolioIndex].id !== "cryptoincome"}/></label>
                     <label>Monthly Payment amount: <input type="number" name="autoPayAmount" /></label>
                     <Button variant="primary"  type="submit">Send Portfolio Request</Button>
                   </form>
                 </Col>
+                {investmentProducts[PortfolioIndex].id === "cryptoincome" ? (
+                <Col xs={12} md={6}>
+                  <Card className="portfolioCard">
+                    <Card.Body>
+                      <Card.Title>Portfolio Viewer</Card.Title>
+                      <label>MetaMask Wallet: 
+                        <input value={accountState.formWalletAddress} onChange={e => handleAccountWalletChange(e)} />
+                        <button onClick={getAccountData}>View Account</button>
+                      </label>
+                      {accountState.formWalletAddress !== null && accountState.data !== null ? (
+                        <Fragment>
+                          {accountState.data !== false ? (
+                            <Table striped bordered hover>
+                              <tbody>
+                                <tr>
+                                  <td>Total Balance</td>
+                                  <td colSpan={2}>${numFormatter(accountState.data.account.activeBalance+accountState.data.account.inboundBalance+accountState.data.account.outboundBalance)}</td>
+                                </tr>
+                                <tr>
+                                  <td>Active Balance</td>
+                                  <td colSpan={2}>${numFormatter(accountState.data.account.activeBalance)}</td>
+                                </tr>
+                                <tr>
+                                  <td>ULNT Payout</td>
+                                  <td colSpan={2}>{numFormatter((accountState.data.account.activeBalance/100)*0.5)}ULNT</td>
+                                </tr>
+                                <tr>
+                                  <th>Processing</th>
+                                  <th>Deposit</th>
+                                  <th>Widthdraw</th>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>${numFormatter(accountState.data.account.inboundBalance)}</td>
+                                  <td>${numFormatter(accountState.data.account.outboundBalance)}</td>
+                                </tr>                               
+                              </tbody>
+                            </Table>
+                          ):(
+                            <div>Not an active account</div>
+                          )}
+                          <ProfitCalcCard />
+                        </Fragment>
+                      ):(
+                        <div>
+                          <span>Enter your public wallet address to view your account</span>
+                        </div>
+                      )}
+                    </Card.Body>
+                  </Card>
+                </Col>
+                ): null}
               </Row>
             </Container>
+            
           </Tab>
           <Tab eventKey="Spark Academy Training" title="Spark Academy Training">
             <h3>Spark Academy</h3>
@@ -246,6 +366,7 @@ const Index = ({ data, location }) => {
 }
 
 export default Index
+/*
 export const pageQuery = graphql`
   {
     site {
@@ -255,3 +376,4 @@ export const pageQuery = graphql`
     }
   }
 `;
+*/

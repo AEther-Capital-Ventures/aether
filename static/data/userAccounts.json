@@ -1,0 +1,15 @@
+[
+    {
+        "firstName":"bob",
+        "lastName":"smith",
+        "phoneNumber":"123",
+        "emailAddress":"nope@okay",
+        "walletAddress":"a",
+        "account":{
+            "activeBalance":1000,
+            "inboundBalance":100,
+            "outboundBalance":0,
+            "createDate":""
+        }
+    }
+]
