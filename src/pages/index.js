@@ -268,7 +268,7 @@ const Index = ({ data, location }) => {
                     <label>Phone: <input type="text" name="phone" /></label>
                     <label>Portfolio Option: <input type="text" name="Portfolio" value={investmentProducts[PortfolioIndex].title} disabled/></label>
                     <label>Risk Tolerance Option: <input type="text" name="RiskTolerance" value={keyStringFormater(Object.keys(investmentProducts[PortfolioIndex].riskTolerance)[riskToleranceIndex])} disabled/></label>
-                    <label>MetaMask Wallet: <input type="text" name="RiskTolerance" disabled={investmentProducts[PortfolioIndex].id !== "cryptoincome"}/></label>
+                    <label>MetaMask Wallet: <input type="text" name="WalletAddress" disabled={investmentProducts[PortfolioIndex].id !== "cryptoincome"}/></label>
                     <label>Monthly Payment amount: <input type="number" name="autoPayAmount" /></label>
                     <Button variant="primary"  type="submit">Send Portfolio Request</Button>
                   </form>
