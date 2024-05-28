@@ -12,17 +12,7 @@ const RiskToleranceCard = ({ investmentProducts, PortfolioIndex, riskToleranceIn
         <Card.Body>
           <Card.Title>{portfolio.title} - {labelRisk} Risk Tolerance</Card.Title>
           <Card.Text>{portfolio.description}</Card.Text>
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>%</th>
-              </tr>
-            </thead>
-            <tbody>
-              
-            </tbody>
-          </Table>
+          <Card.Text>Investments are locked for a minimum of three (3) months. Accrued interest of 0.5 ULNT per $100, along with inbound and outbound processing, occurs on the 1st of each month. Interest is calculated based on the active balance. After interest payments, all inbound and outbound transactions are processed.</Card.Text>
           <blockquote className="blockquote mb-0">{portfolio.paymentInfo}</blockquote>
         </Card.Body>
       </Card>
